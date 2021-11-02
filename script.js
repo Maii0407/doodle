@@ -1,16 +1,13 @@
 //global variables
-const container = document.getElementById('doodle-container');
+const container = document.getElementById('container');
 
-//create grids
-function makeGrid(rows, columns){
-    container.style.setProperty('--grid-rows', rows);
-    container.style.setProperty('--grid-columns', columns);
-
-    for(i = 0; i < (rows * columns); i++){
-        let pixel = document.createElement('div');
-        
-        container.appendChild(pixel).className = "grid-item";
+//makes empty divs
+function makePixels(rows, cols){
+    for( i = 0; i < (rows * cols); i++){
+        let pixels = document.createElement('div');
+        pixels.classList.add('pixels');
+        container.appendChild(pixels);
     }
 }
 
-makeGrid(16, 16);
+makePixels(24, 24);
