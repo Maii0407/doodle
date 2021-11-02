@@ -1,13 +1,27 @@
 //global variables
 const container = document.getElementById('container');
+let row = document.getElementsByClassName('row');
+let pixel = document.getElementsByClassName('pixel');
 
-//makes empty divs
-function makePixels(rows, cols){
-    for( i = 0; i < (rows * cols); i++){
-        let pixels = document.createElement('div');
-        pixels.classList.add('pixels');
-        container.appendChild(pixels);
+//make empty divs
+function makeDiv(x){
+    for(i = 0; i < x; i++){
+        let row = document.createElement('div');
+        row.classList.add('row');
+        container.appendChild(row);
     }
 }
 
-makePixels(24, 24);
+//generates a dynamic grid
+function makeGrid(pixNum){
+    for(i = 0; i < row.length; i++){
+        for(p = 0; p < pixNum; p++){
+            let pixel = document.createElement('div');
+            pixel.classList.add('pixel');
+            row[p].appendChild(pixel);
+        }
+    }
+}
+
+makeDiv(16);
+makeGrid(16);
