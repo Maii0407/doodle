@@ -3,7 +3,7 @@ const container = document.getElementById('container');
 let row = document.getElementsByClassName('row');
 let pixel = document.getElementsByClassName('pixel');
 
-//make empty divs rows
+//make empty div rows
 function makeDiv(x){
     for(i = 0; i < x; i++){
         let row = document.createElement('div');
@@ -24,9 +24,9 @@ function makePixel(pixNum){
 }
 
 //generates a grid
-function makeGrid(rowNum, colNum){
-    makeDiv(rowNum);
-    makePixel(colNum);
+function makeGrid(gridNum){
+    makeDiv(gridNum);
+    makePixel(gridNum);
 }
 
-makeGrid(16, 16);
+makeGrid(16);

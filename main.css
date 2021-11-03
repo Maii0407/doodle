@@ -1,25 +1,28 @@
 body{
     background-color: gainsboro;
+}
+
+#container-wrapper {
     display: flex;
     justify-content: center;
+    outline: 5px solid red;
 }
 
-#container{
+#container {
     display: flex;
     flex-wrap: wrap;
-    max-width: 500px;
-    max-height: 500px;
-    border: 1px solid red;
+    width: 960px;
+    outline: 1px solid red;
 }
 
-#container div{
+.row, .pixel {
     background-color: white;
+    outline: 1px solid grey;
     min-width: 10px;
     min-height: 10px;
-    border: 1px solid gray;
-    flex: 1 1 0;
+    flex: 1 1 auto;
 }
 
-#container div:hover{
+#container div:hover {
     background-color: black;
 }
