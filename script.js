@@ -1,32 +1,15 @@
 //global variables
 const container = document.getElementById('container');
-let row = document.getElementsByClassName('row');
-let pixel = document.getElementsByClassName('pixel');
 
-//make empty div rows
-function makeDiv(x){
-    for(i = 0; i < x; i++){
-        let row = document.createElement('div');
-        row.classList.add('row');
-        container.appendChild(row);
+//generates grid 
+function makeGrid(rows,columns){
+    container.style.gridAutoRows = `repeat(${rows}, 1fr)`;
+    container.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+    for(i = 0; i < (rows * columns); i++){
+        let pixel = document.createElement('div');
+        pixel.classList.add('pixel');
+        container.appendChild(pixel);
     }
 }
 
-//generates columns and fill the grid
-function makePixel(pixNum){
-    for(i = 0; i < row.length; i++){
-        for(p = 0; p < pixNum; p++){
-            let pixel = document.createElement('div');
-            pixel.classList.add('pixel');
-            row[p].appendChild(pixel);
-        }
-    }
-}
-
-//generates a grid
-function makeGrid(gridNum){
-    makeDiv(gridNum);
-    makePixel(gridNum);
-}
-
-makeGrid(16);
+makeGrid(16, 16);
