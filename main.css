@@ -2,14 +2,26 @@ body {
     background-color: gainsboro;
 }
 
-#container-wrapper {
+#header-container {
+    background-color: darkgray;
     display: flex;
     justify-content: center;
 }
 
+h1 {
+    font-size: 50px;
+    outline: 1px solid red;
+}
+
+#container-wrapper {
+    display: flex;
+    justify-content: center;
+    outline: 5px solid red;
+}
+
 #container {
     display: grid;
-    width: 500px;
+    width: 1000px;
     height: 500px;
     outline: 1px solid black;
 }
