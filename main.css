@@ -6,17 +6,19 @@ body {
     background-color: darkgray;
     display: flex;
     justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 30px;
 }
 
 h1 {
     font-size: 50px;
-    outline: 1px solid red;
+    font-family: 'Sigmar One', cursive;
 }
 
 #container-wrapper {
     display: flex;
     justify-content: center;
-    outline: 5px solid red;
+    padding-top: 25px;
 }
 
 #container {
@@ -29,4 +31,15 @@ h1 {
 .pixel {
     background-color: white;
     outline: 1px solid grey;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 5px;
 }
