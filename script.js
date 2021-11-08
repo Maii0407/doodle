@@ -1,6 +1,7 @@
 //global variables
 const container = document.getElementById('container');
 let pixel = document.getElementsByClassName('pixel');
+let timer = null;
 
 //generates grid 
 function makeGrid(rows,columns){
@@ -23,13 +24,20 @@ function createGrid(pixNum){
 //function that colors the grid black
 function turnBlack(e){
     e.target.style.backgroundColor = 'black';
+} 
+
+//function to open navigation bar
+function openNav(){
+    document.getElementById('sideNav').style.width = '250px';
 }
 
-//event listeners
+//function to close navigation bar
+function closeNav(){
+    document.getElementById('sideNav').style.width = '0';
+}
+
+//colors grid black on hold mousedown
 container.addEventListener('mouseover', turnBlack);
 
 
 createGrid(25);
-
-
-
