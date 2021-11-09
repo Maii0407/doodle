@@ -1,7 +1,15 @@
 //global variables
 const container = document.getElementById('container');
+const clearBtn = document.getElementById('clearBtn');
+const setBtn = document.getElementById('setBtn');
+const rainbowBtn = document.getElementById('rainbowBtn');
+const shadingBtn = document.getElementById('shadingBtn');
 let pixel = document.getElementsByClassName('pixel');
-let timer = null;
+
+//event listeners
+container.addEventListener('mouseover', turnBlack);
+clearBtn.addEventListener('click', clearGrid);
+setBtn.addEventListener('click', setGrid);
 
 //generates grid 
 function makeGrid(rows,columns){
@@ -15,8 +23,6 @@ function makeGrid(rows,columns){
 }
 
 //generates grid with single number
-//2 min > 16 default > 50 max limit
-//recommended max is 30 because of performance issues
 function createGrid(pixNum){
     makeGrid(pixNum, (pixNum * 2));
 }
@@ -25,6 +31,21 @@ function createGrid(pixNum){
 function turnBlack(e){
     e.target.style.backgroundColor = 'black';
 } 
+
+//function that clears the grid and set the grid to default
+function clearGrid(e) {
+   container.innerHTML = '';
+   if (container.innerHTML === ''){
+       createGrid(16);
+   }
+}
+
+//function for button to change the current grid
+function setGrid(){
+    container.innerHTML = '';
+    let x = prompt('Pick any number, any number. Between 2 to 50:');
+    createGrid(x);
+}
 
 //function to open navigation bar
 function openNav(){
@@ -36,8 +57,4 @@ function closeNav(){
     document.getElementById('sideNav').style.width = '0';
 }
 
-//colors grid black on hold mousedown
-container.addEventListener('mouseover', turnBlack);
-
-
-createGrid(25);
+createGrid(16);
