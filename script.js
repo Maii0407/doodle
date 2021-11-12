@@ -38,7 +38,7 @@ function colorGrid(e){
         e.target.style.backgroundColor = randomRgb;
     } else{
         e.target.style.backgroundColor = 'black';
-        e.target.style.opacity = (parseFloat(e.target.style.opacity) || 0) + 0.2; 
+        e.target.style.opacity = (parseFloat(e.target.style.opacity) || 0) + 0.1; 
     }
 }
 
