@@ -5,6 +5,9 @@ const setBtn = document.getElementById('setBtn');
 const rainbowBtn = document.getElementById('rainbowBtn');
 let pixel = document.getElementsByClassName('pixel');
 let rainbow = false;
+let shadingColor = ['#e6e6e6', '#cccccc', '#b3b3b3', '#999999', '#808080', '#666666', '#4d4d4d',
+                    '#333333', '#1a1a1a', '#000000'];
+
 
 //event listeners
 container.addEventListener('mouseover', colorGrid);
@@ -34,7 +37,8 @@ function colorGrid(e){
         let randomRgb = '#'+Math.floor(Math.random()*16777215).toString(16);
         e.target.style.backgroundColor = randomRgb;
     } else{
-        e.target.style.backgroundColor = 'black'; 
+        e.target.style.backgroundColor = 'black';
+        e.target.style.opacity = (parseFloat(e.target.style.opacity) || 0) + 0.2; 
     }
 }
 
@@ -73,9 +77,10 @@ function closeNav(){
 //check if the rainbow mode is on or off
 function rainbowClick(){
     if(rainbow === false){
-        return rainbow = true;
+        return [rainbow = true, choose = false];
     } else{
         return rainbow = false;
     }
 }
+
 createGrid(16);
