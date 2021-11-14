@@ -5,9 +5,6 @@ const setBtn = document.getElementById('setBtn');
 const rainbowBtn = document.getElementById('rainbowBtn');
 let pixel = document.getElementsByClassName('pixel');
 let rainbow = false;
-let shadingColor = ['#e6e6e6', '#cccccc', '#b3b3b3', '#999999', '#808080', '#666666', '#4d4d4d',
-                    '#333333', '#1a1a1a', '#000000'];
-
 
 //event listeners
 container.addEventListener('mouseover', colorGrid);
